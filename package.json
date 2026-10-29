@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-opensensemap",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "openSenseMap MCP — citizen-science environmental sensor network (opensensemap.org)",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-opensensemap": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "opensensemap"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-opensensemap.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/opensensemap",
   "pipeworx": {
-    "sourceHash": "v1-342fe20335c6a4fdf4b5801c652e2ab9b4ae8d5f0ac1eed986301b071bbc6839",
-    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
+    "mode": "gateway",
+    "slug": "opensensemap",
+    "gatewaySlug": "opensensemap",
+    "sourceHash": "v1-ae88db411944936f003fc692219b77727dcf11b1e8ff0a81228f4f462e9c2c32",
+    "sourceCommit": "b2c4383545bb35171d0ada2beb1c9c7168ea175e"
   }
 }
